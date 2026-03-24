@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayurvedic Label Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <header class="app-header">
+      <div class="logo-mark">☘</div>
+      <h1>Ayurvedic Label Generator</h1>
+      <p class="tagline">Craft beautiful, professional labels for your herbal products</p>
+    </header>
+
+    <main class="main-layout">
+
+      <!-- ── LEFT PANEL: FORM ─────────────────────────────────────────────── -->
+      <aside class="form-panel">
+
+        <section class="form-section">
+          <h2>Label Style</h2>
+          <div class="theme-grid">
+            <button class="theme-btn active" data-theme="forest" title="Forest Green">
+              <span class="swatch" style="background:linear-gradient(135deg,#1a3a2a,#2d6a4f)"></span>Forest
+            </button>
+            <button class="theme-btn" data-theme="golden" title="Royal Gold">
+              <span class="swatch" style="background:linear-gradient(135deg,#5c3a00,#c9860b)"></span>Golden
+            </button>
+            <button class="theme-btn" data-theme="saffron" title="Saffron">
+              <span class="swatch" style="background:linear-gradient(135deg,#7a2200,#e05c00)"></span>Saffron
+            </button>
+            <button class="theme-btn" data-theme="indigo" title="Indigo Herb">
+              <span class="swatch" style="background:linear-gradient(135deg,#1a1a4e,#3a3a9e)"></span>Indigo
+            </button>
+            <button class="theme-btn" data-theme="pearl" title="Pearl White">
+              <span class="swatch" style="background:linear-gradient(135deg,#c8b49a,#f5ede0)"></span>Pearl
+            </button>
+            <button class="theme-btn" data-theme="rose" title="Rose Petal">
+              <span class="swatch" style="background:linear-gradient(135deg,#6b1e2e,#c04d6a)"></span>Rose
+            </button>
+          </div>
+
+          <div class="field-row">
+            <label>Label Size</label>
+            <select id="labelSize">
+              <option value="small">Small (3×2 in)</option>
+              <option value="medium" selected>Medium (4×3 in)</option>
+              <option value="large">Large (5×4 in)</option>
+              <option value="bottle">Bottle Wrap (8×3 in)</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <label>Decorative Border</label>
+            <select id="borderStyle">
+              <option value="floral">Floral Vine</option>
+              <option value="minimal">Minimal Line</option>
+              <option value="mandala">Mandala Corner</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Product Details</h2>
+
+          <div class="field-row">
+            <label>Brand / Company Name</label>
+            <input type="text" id="brandName" placeholder="e.g. VedaRoots Naturals" />
+          </div>
+
+          <div class="field-row">
+            <label>Brand Tagline</label>
+            <input type="text" id="brandTagline" placeholder="e.g. Pure · Ancient · Healing" />
+          </div>
+
+          <div class="field-row">
+            <label>Product Name</label>
+            <input type="text" id="productName" placeholder="e.g. Ashwagandha Root Powder" />
+          </div>
+
+          <div class="field-row">
+            <label>Product Subtitle / Type</label>
+            <input type="text" id="productSubtitle" placeholder="e.g. Certified Organic · 100% Pure" />
+          </div>
+
+          <div class="field-row">
+            <label>Net Weight / Volume</label>
+            <input type="text" id="netWeight" placeholder="e.g. 100 g / 3.5 oz" />
+          </div>
+
+          <div class="field-row">
+            <label>Key Ingredients (one per line)</label>
+            <textarea id="ingredients" rows="4" placeholder="Ashwagandha (Withania somnifera) — 500 mg&#10;Shatavari (Asparagus racemosus) — 250 mg"></textarea>
+          </div>
+
+          <div class="field-row">
+            <label>Benefits / Description</label>
+            <textarea id="benefits" rows="3" placeholder="Supports stress relief, vitality &amp; immune health."></textarea>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Usage &amp; Directions</h2>
+
+          <div class="field-row">
+            <label>Dosage / Directions</label>
+            <textarea id="dosage" rows="2" placeholder="Take 1-2 capsules twice daily with warm milk or water."></textarea>
+          </div>
+
+          <div class="field-row">
+            <label>Warnings</label>
+            <textarea id="warnings" rows="2" placeholder="Keep out of reach of children. Consult physician if pregnant."></textarea>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Manufacturer Info</h2>
+
+          <div class="field-row">
+            <label>Manufactured By</label>
+            <input type="text" id="mfgBy" placeholder="e.g. VedaRoots Naturals Pvt. Ltd." />
+          </div>
+
+          <div class="field-row">
+            <label>Address</label>
+            <textarea id="mfgAddress" rows="2" placeholder="123 Herb Garden Lane, Rishikesh, Uttarakhand — 249201"></textarea>
+          </div>
+
+          <div class="field-row two-col">
+            <div>
+              <label>Batch No.</label>
+              <input type="text" id="batchNo" placeholder="VR-2026-001" />
+            </div>
+            <div>
+              <label>Mfg. Date</label>
+              <input type="month" id="mfgDate" />
+            </div>
+          </div>
+
+          <div class="field-row two-col">
+            <div>
+              <label>Best Before</label>
+              <input type="month" id="expDate" />
+            </div>
+            <div>
+              <label>MRP (₹)</label>
+              <input type="text" id="mrp" placeholder="₹ 299" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <label>License / Reg. No.</label>
+            <input type="text" id="licNo" placeholder="e.g. AYU/UTTK/2024/0001" />
+          </div>
+
+          <div class="field-row">
+            <label>Website / Contact</label>
+            <input type="text" id="website" placeholder="www.vedaroots.in | +91 98765 43210" />
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Certifications</h2>
+          <div class="cert-grid" id="certGrid">
+            <label class="cert-check"><input type="checkbox" value="organic" checked /><span>Organic</span></label>
+            <label class="cert-check"><input type="checkbox" value="gmp" checked /><span>GMP</span></label>
+            <label class="cert-check"><input type="checkbox" value="vegan" /><span>Vegan</span></label>
+            <label class="cert-check"><input type="checkbox" value="halal" /><span>Halal</span></label>
+            <label class="cert-check"><input type="checkbox" value="iso" /><span>ISO Certified</span></label>
+            <label class="cert-check"><input type="checkbox" value="fssai" checked /><span>FSSAI</span></label>
+          </div>
+        </section>
+
+        <div class="action-buttons">
+          <button class="btn-primary" id="generateBtn">Generate Label</button>
+          <button class="btn-secondary" id="printBtn">Print / Save PDF</button>
+        </div>
+
+      </aside>
+
+      <!-- ── RIGHT PANEL: PREVIEW ─────────────────────────────────────────── -->
+      <section class="preview-panel">
+        <div class="preview-toolbar">
+          <span class="preview-title">Label Preview</span>
+          <div class="zoom-controls">
+            <button id="zoomOut">−</button>
+            <span id="zoomLevel">100%</span>
+            <button id="zoomIn">+</button>
+          </div>
+        </div>
+
+        <div class="preview-canvas" id="previewCanvas">
+          <div class="label-wrapper" id="labelWrapper">
+            <!-- LABEL RENDERED HERE -->
+            <div class="label" id="labelEl">
+              <div class="label-border" id="labelBorder"></div>
+              <div class="label-inner">
+                <div class="label-brand" id="lBrand">VedaRoots Naturals</div>
+                <div class="label-tagline" id="lTagline">Pure · Ancient · Healing</div>
+                <div class="label-divider"><span class="leaf">🌿</span></div>
+                <div class="label-product" id="lProduct">Ashwagandha Root Powder</div>
+                <div class="label-subtitle" id="lSubtitle">Certified Organic · 100% Pure</div>
+
+                <div class="label-ornament" id="lOrnament"></div>
+
+                <div class="label-benefits" id="lBenefits">
+                  Supports stress relief, vitality &amp; immune health.
+                </div>
+
+                <div class="label-ingredients-box" id="lIngredientsBox">
+                  <div class="ingredients-title">Key Ingredients</div>
+                  <div class="ingredients-list" id="lIngredients">
+                    Ashwagandha (Withania somnifera) — 500 mg<br/>
+                    Shatavari (Asparagus racemosus) — 250 mg
+                  </div>
+                </div>
+
+                <div class="label-dosage-box">
+                  <div class="dosage-title">Directions</div>
+                  <div id="lDosage">Take 1-2 capsules twice daily with warm milk or water.</div>
+                </div>
+
+                <div class="label-certs" id="lCerts">
+                  <span class="cert-badge">✓ Organic</span>
+                  <span class="cert-badge">✓ GMP</span>
+                  <span class="cert-badge">✓ FSSAI</span>
+                </div>
+
+                <div class="label-info-grid">
+                  <div class="info-cell">
+                    <span class="info-label">Net Wt.</span>
+                    <span class="info-val" id="lWeight">100 g</span>
+                  </div>
+                  <div class="info-cell">
+                    <span class="info-label">Batch</span>
+                    <span class="info-val" id="lBatch">VR-2026-001</span>
+                  </div>
+                  <div class="info-cell">
+                    <span class="info-label">Mfg.</span>
+                    <span class="info-val" id="lMfgDate">—</span>
+                  </div>
+                  <div class="info-cell">
+                    <span class="info-label">Best Before</span>
+                    <span class="info-val" id="lExpDate">—</span>
+                  </div>
+                  <div class="info-cell">
+                    <span class="info-label">MRP</span>
+                    <span class="info-val" id="lMrp">₹ 299</span>
+                  </div>
+                  <div class="info-cell">
+                    <span class="info-label">Lic. No.</span>
+                    <span class="info-val" id="lLic">—</span>
+                  </div>
+                </div>
+
+                <div class="label-warnings" id="lWarnings">
+                  Keep out of reach of children. Consult physician if pregnant.
+                </div>
+
+                <div class="label-mfg" id="lMfg">
+                  <strong>Mfg. by:</strong> VedaRoots Naturals Pvt. Ltd., Rishikesh, Uttarakhand
+                </div>
+
+                <div class="label-website" id="lWebsite">www.vedaroots.in</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
